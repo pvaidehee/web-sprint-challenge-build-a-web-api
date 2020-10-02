@@ -55,13 +55,13 @@ function validateAction(req, res, next){
     const body = req.body; 
     const projectId = req.body.project_id; 
     const description = req.body.description; 
-    const notes = req.body.notes; 
-    if(!body){
+    const notes = req.body.notes;
+    if(!body){ 
         res.status(400).json({ message: "Missing action data" }); 
     } else if(!projectId || !notes || !description){
         res.status(400).json({ message: "A required field is missing for this action" }); 
     } else if(description.length >= 160){
-        res.status(403).json({ message: "Please keep actions description to 160 characters or less" }); 
+        res.status(403).json({ message: "Please keep actions description to 128 characters or more" }); 
     } else {
         next(); 
     }
