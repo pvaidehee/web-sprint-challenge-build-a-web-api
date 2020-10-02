@@ -12,3 +12,9 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+const server = require("./server"); 
+
+const PORT = process.env.PORT || 3000; 
+server.listen(PORT, () => {
+    console.log(`server is up and running at port:${PORT}`); 
+}); 
